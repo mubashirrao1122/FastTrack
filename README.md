@@ -170,8 +170,7 @@ FastTrack/
 - Scroll to zoom
 - Auto-rotation is enabled
 
----
-
+---                                                                                                                                                                                                                                                                                                                                         
 ## Tech Stack
 
 ### Frontend Framework

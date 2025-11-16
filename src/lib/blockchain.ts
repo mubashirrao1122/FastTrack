@@ -88,7 +88,7 @@ export interface Stats {
   averageAttendance: number;
 }
 
-export const generateGenesisBlock = (type: 'department' | 'class' | 'student'): Block => {
+export const generateGenesisBlock = (_type: 'department' | 'class' | 'student'): Block => {
   return {
     index: 0,
     timestamp: new Date().toISOString(),

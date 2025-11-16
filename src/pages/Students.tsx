@@ -12,6 +12,7 @@ import ConfirmDialog from '@/components/ui/ConfirmDialog';
 
 export default function Students() {
   const { state, addStudent, updateStudent, deleteStudent } = useApp();
+  const { students, departments, classes } = state;
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
@@ -20,7 +21,7 @@ export default function Students() {
     student: null,
   });
 
-  const filteredStudents = state.students.filter(student =>
+  const filteredStudents = students.filter(student =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     student.rollNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
     student.email.toLowerCase().includes(searchQuery.toLowerCase())
@@ -44,10 +45,19 @@ export default function Students() {
     classId: string;
     phone: string;
   }) => {
+    const selectedDept = departments.find(d => d.id === data.departmentId);
+    const selectedClass = classes.find(c => c.id === data.classId);
+    
+    const studentData = {
+      ...data,
+      departmentName: selectedDept?.name || '',
+      className: selectedClass?.name || '',
+    };
+    
     if (selectedStudent) {
-      await updateStudent(selectedStudent.id, data);
+      await updateStudent(selectedStudent.id, studentData);
     } else {
-      await addStudent(data);
+      await addStudent(studentData);
     }
   };
 
