@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+* {
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+body {
+  background-color: #050508;
+  color: rgba(255, 255, 255, 0.98);
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+}
+
+code, pre {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism */
+.glass-card {
+  backdrop-filter: blur(40px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 245, 255, 0.2);
+  border-radius: 0.5rem;
+}
+
+.glass-hover:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(191, 64, 191, 0.4);
+}
+
+/* Holographic Text */
+.holographic-text {
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #bf40bf,
+    #00ff88,
+    #00f5ff
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #0a0a0f;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 245, 255, 0.3);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 245, 255, 0.5);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(0, 245, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid #00f5ff;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #00f5ff;
+  outline-offset: 2px;
+}
