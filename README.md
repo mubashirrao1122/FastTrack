@@ -326,11 +326,6 @@ MIT License - See LICENSE file for details
 
 ---
 
-## Contact
-
-- GitHub Repository: [mubashirrao1122/FastTrack](https://github.com/mubashirrao1122/FastTrack)
-- GitHub Issues: [Create an issue](https://github.com/mubashirrao1122/FastTrack/issues)
-- Email: mubashirrao1122@gmail.com
 
 ---
 
