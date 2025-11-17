@@ -83,7 +83,7 @@ FastTrack is a blockchain-powered web application for tracking attendance. It br
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/fasttrack.git
+git clone https://github.com/mubashirrao1122/fasttrack.git
 cd fasttrack
 npm install
 npm run dev
